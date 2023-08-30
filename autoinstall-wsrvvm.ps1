@@ -15,6 +15,7 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 
 "Descargando Windows Server 2022 Trial"
+cd C:
 iwr -useb https://go.microsoft.com/fwlink/p/?linkid=2195333 -OutFile wsrv2022.iso
 
 "Creando la maquina virtual"
