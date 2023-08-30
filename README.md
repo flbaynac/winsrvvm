@@ -1,4 +1,4 @@
-# WINdowS sErEvR vIRTUALmACHINE
+# Windows Server Virtual Machine (My lab config)
 
 Powershell script to automatic deploy windows server 2022 lab virtual machine using hyper-v
 
