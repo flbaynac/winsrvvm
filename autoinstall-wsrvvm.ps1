@@ -14,7 +14,7 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 "Habilitando Hyper-v (Debe reiniciar una vez instalada la caracteristica)"
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 
-"Descargando Windows Server 2022 Trial"
+"Descargando Windows Server 2022 Trial (Aproximadamente 6 GB de descarga)"
 cd C:
 iwr -useb https://go.microsoft.com/fwlink/p/?linkid=2195333 -OutFile wsrv2022.iso
 
