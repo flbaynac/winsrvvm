@@ -12,16 +12,16 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
     break
 }
 
-"Habilitando Hyper-v"
+"Habilitando Hyper-v (Debe reiniciar una vez instalada la característica)"
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 
 "Descargando Windows Server 2022 Trial"
-iwr -useb https://go.microsoft.com/fwlink/p/?linkid=2195333
+iwr -useb https://go.microsoft.com/fwlink/p/?linkid=2195333 -OutFile wsrv2022.iso
 
 "Creando la máquina virtual"
 $VMName = "WINSRV2022SO2"
 $Switch = 'External VM Switch'
-$InstallMedia = '.\20348.1.210507-1500.fe_release_amd64fre_SERVER_LOF_PACKAGES_OEM.iso'
+$InstallMedia = '.\wsrv2022.iso'
 New-VM -Name $VMName -MemoryStartupBytes 2147483648 -Generation 2 -NewVHDPath "D:\Virtual Machines\$VMName\$VMName.vhdx" -NewVHDSizeBytes 42949672960 -Path "D:\Virtual Machines\$VMName" -SwitchName $Switch
 
 # Add DVD Drive to Virtual Machine
